@@ -1,5 +1,17 @@
-<p class="p-component">This website has been created by MrTigreroux.<br>See all my Spigot plugins <a
-        href="https://www.spigotmc.org/resources/authors/mrtigreroux.225451/">here</a>.</p>
+<p>This website has been created by MrTigreroux.<br>See all my projects below.</p>
 
-<p class="p-component" style="margin-top: 2rem">Ce site a été créé par MrTigreroux.<br>Retrouvez tous mes plugins
-    Spigot <a href="https://www.spigotmc.org/resources/authors/mrtigreroux.225451/">ici</a>.</p>
+<p style="margin-top: 2rem">Ce site a été créé par MrTigreroux.<br>Retrouvez tous mes projets
+        ci-dessous.</p>
+
+<div id="buttons-container">
+        <button pButton pRipple type="button" class="link-button p-button-raised p-button-text"
+                (click)="onSpigotMCButtonClick()">
+                <img alt="logo" src="assets/images/logos/SpigotMC.png" style="width: 2rem" />
+                <span class="link-button-label">SpigotMC</span>
+        </button>
+        <button pButton pRipple type="button" class="link-button p-button-raised p-button-text"
+                (click)="onGitHubButtonClick()">
+                <img alt="logo" src="assets/images/logos/GitHub.png" style="width: 1.4rem" />
+                <span class="github-link-button-label link-button-label">GitHub</span>
+        </button>
+</div>

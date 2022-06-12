@@ -1,5 +1,85 @@
 /* You can add global styles to this file, and also import other style files */
 
-p {
-    font-size: large !important;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.1;
+    color: inherit;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 1rem !important;
+    line-height: 1.4 !important;
+    color: #2c3e50 !important;
+    height: 93%;
+}
+
+.callout {
+    padding: 0.8rem 1.2rem;
+    margin: 3rem 0;
+    border: 0.1rem solid #eee;
+    border-left-width: 0.4rem;
+    border-radius: 1rem;
+    background-color: #fdfdfd;
+}
+
+.callout .title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.callout-warning {
+    border-left-color: #f0ad4e;
+}
+
+.callout-warning .title {
+    color: #f0ad4e;
+}
+
+a.text-link {
+    color: #18bc9c;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+}
+
+a.text-link:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #18bc9c;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+a.text-link:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.callout p {
+    margin-bottom: 0;
 }

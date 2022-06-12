@@ -14,7 +14,8 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.items = [
-      { label: 'TigerReports', icon: 'pi pi-fw pi-home', routerLink: ['/plugins/tigerreports'] },
+      { label: 'TigerReports', routerLink: ['/plugins/tigerreports'] },
+      { label: 'TigerReportsSupports', routerLink: ['/plugins/tigerreportssupports'] },
       { label: 'About', icon: 'pi pi-fw pi-file', routerLink: ['/about'] }
     ];
   }

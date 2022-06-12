@@ -9,7 +9,7 @@ img.flag {
 }
 
 .flag {
-    background: url('../images/demo/flag/flags_responsive.png') no-repeat;
+    background: url('../../assets/images/flags_responsive.png') no-repeat;
     background-size: 100%;
     vertical-align: middle;
 }
@@ -981,4 +981,18 @@ img.flag {
 
 .flag-zw {
     background-position: 0 100%
+}
+
+.languages-selector div {
+    width: 5rem;
+}
+
+.language-item {
+    display: flex;
+    align-items: center;
+}
+
+.language-item img.flag {
+    width: 18px;
+    margin-right: 0.5rem;
 }

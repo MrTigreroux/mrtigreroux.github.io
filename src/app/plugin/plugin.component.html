@@ -1,1 +1,50 @@
-<p>Plugin: {{ name }}</p>
+<app-plugin-title [pluginName]="name"></app-plugin-title>
+<div id="language-selection">
+    <app-language-selector></app-language-selector>
+</div>
+
+<p *ngIf="!languageService.isFrench()">
+    Welcome to the <b>messages updater</b> tool for <a class="text-link" href="{{spigotWebLink}}">{{
+        name }}</a> plugin.
+    <br>This tool allows you to update your messages to the <b>latest version</b> of {{ name }}.
+    <br>However, it is recommended to have a look at the <a class="text-link" href="{{spigotWebLink}}/updates">update
+        logs</a> (before
+    updating the
+    plugin) to see the messages that have changed.
+</p>
+<p *ngIf="languageService.isFrench()">
+    Bienvenue sur l'outil de <b>mise à jour des messages</b> pour le plugin <a class="text-link"
+        href="{{spigotWebLink}}">{{ name }}</a>.
+    <br>Cet outil vous permet de mettre à jour vos messages vers la <b>dernière version</b> de {{ name }} sans avoir à
+    prendre ceux de base (qui sont disponibles sur la page de présentation du plugin).
+    <br>Cependant, il est recommandé de lire le <a class="text-link" href="{{spigotWebLink}}/updates">détail des mises à
+        jour</a> (avant
+    de mettre à jour le plugin) pour voir les messages qui ont changé.
+</p>
+
+<div class="callout callout-warning" *ngIf="!languageService.isFrench()">
+    <span class="title">Warning</span>
+    <p>
+        This tool doesn't add the missing placeholders ("_Placeholder_").
+        <br>It doesn't fix syntax errors, accents, or all other problem already present in the given messages.
+        <br>The (old) unused messages are <b>removed</b> and displayed at the bottom of the page.
+    </p>
+</div>
+<div class="callout callout-warning" *ngIf="languageService.isFrench()">
+    <span class="title">Attention</span>
+    <p>
+        Cet outil ne rajoute pas les placeholders ("_Placeholder_") manquants.
+        <br>Il ne corrige pas non plus les erreurs de syntaxe, les accents, ou tout autre problème présent dans les
+        messages
+        fournis.
+        <br>Les (anciens) messages non utilisés sont <b>retirés</b> et indiqués en bas de page.
+    </p>
+</div>
+
+<button pButton type="button" class="p-button-secondary"
+    label="{{ languageService.isFrench() ? 'Messages par défaut' : 'Default messages' }}" icon="pi pi-fw pi-file"
+    iconPos="left" (click)="onDefaultMessagesButtonClick()">
+</button>
+
+<app-plugin-messages-updater [pluginName]="name" [defaultMessagesWebLink]="getDefaultMessagesWebLink()">
+</app-plugin-messages-updater>

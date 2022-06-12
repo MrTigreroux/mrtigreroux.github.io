@@ -1,15 +1,16 @@
-<p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" [filter]="true" filterBy="name"
-    [showClear]="true" placeholder="Select a Country">
+<p-dropdown [options]="languageService.languages" [(ngModel)]="languageService.selectedLanguage" optionLabel="name"
+    [filter]="true" filterBy="name" [showClear]="false" placeholder="Select your language" class="languages-selector">
     <ng-template pTemplate="selectedItem">
-        <div class="country-item country-item-value" *ngIf="selectedCountry">
-            <img src="assets/images/flag_placeholder.png" [class]="'flag flag-' + selectedCountry.code.toLowerCase()" />
-            <div>{{selectedCountry.name}}</div>
+        <div class="language-item language-item-value" *ngIf="languageService.selectedLanguage">
+            <img src="assets/images/flag_placeholder.png"
+                [class]="'flag flag-' + languageService.selectedLanguage.code.toLowerCase()" />
+            <div>{{languageService.selectedLanguage.name}}</div>
         </div>
     </ng-template>
-    <ng-template let-country pTemplate="item">
-        <div class="country-item">
-            <img src="assets/images/flag_placeholder.png" [class]="'flag flag-' + country.code.toLowerCase()" />
-            <div>{{country.name}}</div>
+    <ng-template let-language pTemplate="item">
+        <div class="language-item">
+            <img src="assets/images/flag_placeholder.png" [class]="'flag flag-' + language.code.toLowerCase()" />
+            <div>{{language.name}}</div>
         </div>
     </ng-template>
 </p-dropdown>

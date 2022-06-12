@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-plugin-title',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./plugin-title.component.scss']
 })
 export class PluginTitleComponent implements OnInit {
+
+  @Input() pluginName!: string;
 
   constructor() { }
 

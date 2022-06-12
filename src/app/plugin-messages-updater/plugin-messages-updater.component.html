@@ -1,1 +1,50 @@
-<p>plugin-messages-updater works!</p>
+<span class="p-float-label messages-input">
+    <textarea id="messages-input-textarea" [(ngModel)]="messagesInput" rows="10" cols="30" pInputTextarea></textarea>
+    <label for="messages-input-textarea">{{ languageService.isFrench() ? 'Collez le contenu de votre fichier
+        messages.yml
+        ici' : 'Paste the content of your messages.yml file here'}}</label>
+</span>
+
+<button pButton pRipple type="button" class="p-button-secondary"
+    label="{{ languageService.isFrench() ? 'Mettre à jour les messages' : 'Update the messages' }}"
+    icon="pi pi-fw pi-sync" iconPos="left" (click)="onUpdateMessagesButtonClick()">
+</button>
+
+<div #updateResultDiv id="update-result" *ngIf="updatedMessages !== undefined">
+    <div *ngIf="languageService.isFrench()">
+        <b>Voici vos messages mis à jour:</b>
+        <p>Les nouveaux messages sont <code class="new-message-0">surlignés en vert</code>.<br>
+            Les messages modifiés sont <code class="modified-message-0">surlignés en orange</code>.</p>
+    </div>
+    <div *ngIf="!languageService.isFrench()">
+        <b>Here are the updated messages:</b>
+        <p>New messages are <code class="new-message-0">highlighted in green</code>.<br>
+            Modified messages are <code class="modified-message-0">highlighted in orange</code>.</p>
+    </div>
+    <div id="updated-messages" class="messages-container">
+        <pre class="code">
+            <span *ngFor="let line of updatedMessages; let i = index; let isFirst = first" class="message-line{{isFirst ? ' first-line' : ''}}">
+                <span class="line-number"></span>
+                <code class="{{line.type | lowercase}}-message-{{i % 2}}"><b class="message-key">{{line.key}}:</b> {{line.message}}</code>
+            </span>
+        </pre>
+    </div>
+
+    <button pButton pRipple type="button" class="p-button-secondary"
+        label="{{ languageService.isFrench() ? 'Copier les messages' : 'Copy the messages' }}" icon="pi pi-fw pi-copy"
+        iconPos="left" (click)="onCopyMessagesButtonClick()">
+    </button>
+
+    <div id="removed-messages-container" *ngIf="removedMessages !== undefined && removedMessages.length > 0">
+        <b>{{ languageService.isFrench() ? "Messages supprimés:" : "Here are the removed messages:" }}</b>
+
+        <div id="removed-messages" class="messages-container">
+            <pre class="code">
+                <span *ngFor="let line of removedMessages; let i = index; let isFirst = first" class="message-line{{isFirst ? ' first-line' : ''}}">
+                    <span class="line-number"></span>
+                    <code class="removed-message-{{i % 2}}"><b class="message-key">{{line.key}}:</b> {{line.message}}</code>
+                </span>
+            </pre>
+        </div>
+    </div>
+</div>

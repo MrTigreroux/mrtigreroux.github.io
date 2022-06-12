@@ -1,0 +1,149 @@
+textarea {
+    resize: vertical;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.messages-input {
+    margin: 3.5rem 0 2rem 0;
+}
+
+div#update-result {
+    margin-top: 2rem;
+}
+
+div.messages-container {
+    border: solid 2px #dce4ec;
+    border-radius: 4px;
+    resize: vertical;
+    overflow: auto;
+    max-width: 100%;
+    min-width: 10%;
+    height: 20rem;
+    margin-bottom: 2rem;
+    min-height: 2rem;
+}
+
+div#removed-messages {
+    height: auto;
+    margin-top: 1rem;
+}
+
+div#updated-messages {
+    height: 20rem;
+}
+
+div#removed-messages-container {
+    margin: 2rem 0;
+}
+
+pre.code {
+    display: table;
+    // table-layout: fixed;
+    width: 100%;
+    /* anything but auto, otherwise fixed layout not guaranteed */
+    white-space: pre-wrap;
+    padding: 0px;
+    background-color: #ffffff;
+}
+
+pre.code::before {
+    counter-reset: linenum;
+}
+
+pre.code span.message-line {
+    display: table-row;
+    counter-increment: linenum;
+}
+
+pre.code span.line-number {
+    /* used for line numbers */
+    display: table-cell;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+pre.code span.line-number::before {
+    content: counter(linenum);
+    text-align: right;
+    display: block;
+}
+
+pre.code span.line-number {
+    width: 4em;
+}
+
+pre.code code {
+    display: table-cell;
+}
+
+pre.code {
+    /*border: solid 2px #dce4ec;*/
+    border: none;
+    width: 100%;
+    margin: 0;
+}
+
+pre.code span.line-number {
+    background: #f0f0f0;
+    padding: 3px;
+    padding-top: 0px;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+}
+
+pre.code span.line-number::before {
+    font-size: 90%;
+    color: #999;
+}
+
+pre.code span.message-line.first-line span.line-number {
+    border-top: none;
+}
+
+pre.code code {
+    padding: 0.2rem 0.5rem;
+    color: #2c3e50;
+}
+
+pre.code span.line-number::before {
+    content: counter(linenum) ".";
+}
+
+.message-key {
+    color: #006ae6;
+    font-weight: bold;
+}
+
+code.kept-message-0 {
+    background: #ffffff;
+}
+
+code.kept-message-1 {
+    background: #f0f8ff;
+}
+
+code.new-message-0 {
+    background: #ddf9dd;
+}
+
+code.new-message-1 {
+    background: #c7f9c8;
+}
+
+code.modified-message-0 {
+    background: #f9ecc7;
+}
+
+code.modified-message-1 {
+    background: #efdead;
+}
+
+code.removed-message-0 {
+    background: #f9c7c7;
+}
+
+code.removed-message-1 {
+    background: #efadad;
+}

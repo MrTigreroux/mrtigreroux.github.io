@@ -5,11 +5,16 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent {
 
   constructor() { }
 
-  ngOnInit(): void {
+  onSpigotMCButtonClick() {
+    window.open("https://www.spigotmc.org/resources/authors/mrtigreroux.225451/");
+  }
+
+  onGitHubButtonClick() {
+    window.open("https://github.com/MrTigreroux");
   }
 
 }
