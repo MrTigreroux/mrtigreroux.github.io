@@ -36,7 +36,7 @@ export class PluginComponent implements OnInit {
   }
 
   public getDefaultMessagesWebLink(): string {
-    return 'https://raw.githubusercontent.com/MrTigreroux/' + this.name + '/master/' + this.name + '/messages/' + this.languageService.selectedLanguage.english + '.yml';
+    return 'https://raw.githubusercontent.com/MrTigreroux/' + this.name + '/master/default-messages/' + this.languageService.selectedLanguage.english + '.yml';
   }
 
 }
