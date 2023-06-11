@@ -20,7 +20,8 @@ export class LanguageService {
     "vietnamese": { name: 'Tiếng Việt', code: 'VN', english: 'vietnamese' },
     "dutch": { name: 'Nederlands', code: 'NL', english: 'dutch' },
     "german": { name: 'Deutsch', code: 'DE', english: 'german' },
-    "polish": { name: 'Polskie', code: 'PL', english: 'polish' }
+    "polish": { name: 'Polskie', code: 'PL', english: 'polish' },
+    "italian": { name: 'Italiano', code: 'IT', english: 'italian' }
   }
 
   selectedLanguage: Language;
